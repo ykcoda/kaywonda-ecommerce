@@ -19,4 +19,4 @@ class DatabaseSettings(BaseSettings):
 
     model_config = _model_config
 
-db = DatabaseSettings()
+database_settings = DatabaseSettings()
