@@ -8,7 +8,7 @@ _model_config = SettingsConfigDict(
 
 class DatabaseSettings(BaseSettings):
     POSTGRES_HOST: str = os.getenv("POSTGRES_HOST") or ""
-    POSTGRESS_PORT: str = os.getenv("POSTGRESS_PORT") or ""
+    POSTGRESS_PORT: int = int(os.getenv("POSTGRESS_PORT") or 0)
     POSTGRESS_DB: str = os.getenv("POSTGRESS_DB") or ""
     POSTGRESS_USER: str = os.getenv("POSTGRESS_USER") or ""
     POSTGRESS_PASSWORD: str = os.getenv("POSTGRESS_PASSWORD") or ""
@@ -21,4 +21,3 @@ class DatabaseSettings(BaseSettings):
 
 
 db = DatabaseSettings()
-print(db.database_url)
